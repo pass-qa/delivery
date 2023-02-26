@@ -11,3 +11,10 @@ See the <a href="https://www.pass.qa/integration" target="_blank">integration pa
 ## Documentation
 
 See the <a href="https://passdelivery.readme.io/" target="_blank">documentation</a> for pass delivery api documentation.
+
+
+## Installation
+
+```console
+composer require pass-qa/delivery
+```
