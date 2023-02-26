@@ -84,4 +84,9 @@ class Orders
 
         return $this->send($options);
     }
+
+    public function List()
+    {
+        return $this->send($this->options);
+    }
 }
