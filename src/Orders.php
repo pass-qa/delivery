@@ -23,4 +23,26 @@ class Orders
             ],
         ];
     }
+
+    private function send($options)
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, $options);
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            return [
+                "status"  => "error",
+                "message" => "'cURL Error #:{$err}",
+                "data"    => []
+            ];
+        } else {
+            return json_decode($response);
+        }
+    }
 }
