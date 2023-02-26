@@ -1,0 +1,24 @@
+{
+    "name": "pass-qa/delivery",
+    "description": "Pass delivery service API library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PassQa\\Delivery\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mostafa sharami",
+            "email": "mostafa.sharami@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0"
+    }
+}
