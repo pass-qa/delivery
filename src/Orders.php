@@ -56,4 +56,14 @@ class Orders
 
         return $this->send($options);
     }
+
+    public function Create($order_info)
+    {
+        $options = $this->options;
+
+        $options[CURLOPT_CUSTOMREQUEST] = 'POST';
+        $options[CURLOPT_POSTFIELDS] = json_encode($order_info);
+
+        return $this->send($options);
+    }
 }
