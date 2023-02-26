@@ -84,3 +84,66 @@ use PassQa\Delivery\Facades\PassOrder;
 
 $response = PassOrder::Price($priceData);
 ```
+
+### create an order
+
+Once you calculated the price of your order, you can use this endpoint in order to create a new order.
+
+```php
+$orderData = [
+        "addresses"=> [
+            "pickup" =>[
+                "lat"=> "25.275047",
+                "long"=> "51.535141",
+                "name"=> "majva",
+                "phone"=> "+97466661234",
+                "address"=> "this street",
+                "description"=> "it is a sample description"
+            ],
+            "dropoffs" => [
+                [
+                    "lat"=> "25.277007",
+                    "long"=> "51.530034",
+                    "name"=> "majva",
+                    "phone"=> "+97466661234",
+                    "address"=> "that street",
+                    "description"=> "it is a sample description"
+                ],
+                [
+                    "lat"=> "25.277007",
+                    "long"=> "51.530034",
+                    "name"=> "majva",
+                    "phone"=> "+97466661234",
+                    "address"=> "other street",
+                    "description"=> "it is a sample description"
+                ],
+                [
+                    "lat"=> "25.277007",
+                    "long"=> "51.530034",
+                    "name"=> "majva",
+                    "phone"=> "+97466661234",
+                    "address"=> "another street",
+                    "description"=> "it is a sample description"
+                ]
+            ]
+        ]
+    ];
+```
+
+use object
+
+```php
+use PassQa\Delivery\Orders;
+
+$order = new Orders('Your token');
+
+$response = $order->Create($orderData);
+```
+
+or use facade
+
+```php
+use PassQa\Delivery\Facades\PassOrder;
+
+$response = PassOrder::Create($orderData);
+```
