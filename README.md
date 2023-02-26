@@ -234,3 +234,25 @@ use PassQa\Delivery\Facades\PassOrder;
 
 $response = PassOrder::Cancel('order id');
 ```
+
+### list of orders
+
+List of all submitted orders by your tokens
+
+use object
+
+```php
+use PassQa\Delivery\Orders;
+
+$order = new Orders('Your token');
+
+$response = $order->List();
+```
+
+or use facade
+
+```php
+use PassQa\Delivery\Facades\PassOrder;
+
+$response = PassOrder::List();
+```
