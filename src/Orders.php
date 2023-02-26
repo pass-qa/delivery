@@ -89,4 +89,13 @@ class Orders
     {
         return $this->send($this->options);
     }
+
+    public function Cancel($order_id)
+    {
+        $options = $this->options;
+
+        $options[CURLOPT_URL] .= "/{$order_id}/cancel";
+
+        return $this->send($options);
+    }
 }
