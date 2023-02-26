@@ -173,3 +173,40 @@ use PassQa\Delivery\Facades\PassOrder;
 
 $response = PassOrder::Tracking('order id');
 ```
+
+### get order detail
+
+Call the following endpoint in order to get the order details.
+
+The order details include:
+<ol>
+<li>Pickup and Dropoff details including description</li>
+
+<li>Driver details including name, phone number, avatar and vehicle information</li>
+
+<li>Order price and payment details</li>
+
+<li>Order statuses</li>
+
+<li>Share URL. A tool which you can use to share a link with your clients to view the live driver status.</li>
+</ol>
+
+The 'order id' is available in the [create](#create-an-order) API response
+
+use object
+
+```php
+use PassQa\Delivery\Orders;
+
+$order = new Orders('Your token');
+
+$response = $order->Detail('order id');
+```
+
+or use facade
+
+```php
+use PassQa\Delivery\Facades\PassOrder;
+
+$response = PassOrder::Detail('order id');
+```
