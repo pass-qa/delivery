@@ -147,3 +147,29 @@ use PassQa\Delivery\Facades\PassOrder;
 
 $response = PassOrder::Create($orderData);
 ```
+
+### tracking driver of your order
+
+Once you successfully have created an order, you will be able to watch the Pass driver on a live map.
+
+The driver's location and order status will be change as the driver is moving.
+
+The 'order id' is available in the [create](#create-an-order) API response
+
+use object
+
+```php
+use PassQa\Delivery\Orders;
+
+$order = new Orders('Your token');
+
+$response = $order->Tracking('order id');
+```
+
+or use facade
+
+```php
+use PassQa\Delivery\Facades\PassOrder;
+
+$response = PassOrder::Tracking('order id');
+```
