@@ -32,6 +32,13 @@
         "ext-curl": "*",
         "ext-json": "*"
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PassQa\\Delivery\\Providers\\PassDeliveryApiServiceProvider"
+            ]
+        }
+    },
     "require-dev": {
         "orchestra/testbench": "^8.0"
     }
