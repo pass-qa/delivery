@@ -256,3 +256,7 @@ use PassQa\Delivery\Facades\PassOrder;
 
 $response = PassOrder::List();
 ```
+
+### Security
+
+If you discover any security-related issues, please email [security@pass.qa](mailto:security@spatie.be) instead of using the issue tracker.
