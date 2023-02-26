@@ -66,4 +66,13 @@ class Orders
 
         return $this->send($options);
     }
+
+    public function Detail($order_id)
+    {
+        $options = $this->options;
+
+        $options[CURLOPT_URL] .= "/{$order_id}";
+
+        return $this->send($options);
+    }
 }
