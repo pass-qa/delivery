@@ -36,7 +36,10 @@
         "laravel": {
             "providers": [
                 "PassQa\\Delivery\\Providers\\PassDeliveryApiServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "PassOrder": "PassQa\\Delivery\\Facades\\PassOrder"
+            }
         }
     },
     "require-dev": {
