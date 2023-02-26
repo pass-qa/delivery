@@ -210,3 +210,27 @@ use PassQa\Delivery\Facades\PassOrder;
 
 $response = PassOrder::Detail('order id');
 ```
+
+### cancel an order
+
+You can cancel any order before courier arrival (before the pickup status)
+
+The 'order id' is available in the [create](#create-an-order) API response
+
+use object
+
+```php
+use PassQa\Delivery\Orders;
+
+$order = new Orders('Your token');
+
+$response = $order->Cancel('order id');
+```
+
+or use facade
+
+```php
+use PassQa\Delivery\Facades\PassOrder;
+
+$response = PassOrder::Cancel('order id');
+```
