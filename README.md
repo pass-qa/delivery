@@ -266,3 +266,8 @@ If you discover any security-related issues, please email [security@pass.qa](mai
 
 - [Mostafa](https://github.com/mostafasharami)
 - [Majva](https://github.com/majva-gh)
+
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
