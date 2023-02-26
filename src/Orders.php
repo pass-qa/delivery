@@ -75,4 +75,13 @@ class Orders
 
         return $this->send($options);
     }
+
+    public function Tracking($order_id)
+    {
+        $options = $this->options;
+
+        $options[CURLOPT_URL] .= "/{$order_id}/eta";
+
+        return $this->send($options);
+    }
 }
