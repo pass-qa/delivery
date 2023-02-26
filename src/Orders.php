@@ -45,4 +45,15 @@ class Orders
             return json_decode($response);
         }
     }
+
+    public function Price($points_info)
+    {
+        $options = $this->options;
+
+        $options[CURLOPT_URL] .= '/price/calc';
+        $options[CURLOPT_CUSTOMREQUEST] = 'POST';
+        $options[CURLOPT_POSTFIELDS] = json_encode($points_info);
+
+        return $this->send($options);
+    }
 }
