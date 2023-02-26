@@ -1,1 +1,1 @@
-# delivery
+<p align="center"><img src="./socialcard.jpg" alt="Social Card of Pass Delivery API"></p>
