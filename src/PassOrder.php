@@ -2,7 +2,7 @@
 
 namespace PassQa\Delivery;
 
-class Orders
+class PassOrder
 {
     private array $options;
 
