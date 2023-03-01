@@ -19,7 +19,7 @@ class PassDeliveryApiServiceProvider extends ServiceProvider
             'pass-qa');
 
         $this->app->bind('pass-order', function () {
-            return new PassOrder(config('pass-qa.api-token'));
+            return new PassOrder();
         });
     }
 }
