@@ -29,9 +29,9 @@ You must generate a token. See [this page](https://passdelivery.readme.io/refere
 #### create new object
 
 ```php
-use PassQa\Delivery\Orders;
+use PassQa\Delivery\PassOrder;
 
-$order = new Orders('Your token')
+$order = new PassOrder('Your token')
 ```
 
 #### use facade
@@ -70,9 +70,9 @@ $priceData = [
 use object
 
 ```php
-use PassQa\Delivery\Orders;
+use PassQa\Delivery\PassOrder;
 
-$order = new Orders('Your token');
+$order = new PassOrder('Your token');
 
 $response = $order->Price($priceData);
 ```
@@ -133,9 +133,9 @@ $orderData = [
 use object
 
 ```php
-use PassQa\Delivery\Orders;
+use PassQa\Delivery\PassOrder;
 
-$order = new Orders('Your token');
+$order = new PassOrder('Your token');
 
 $response = $order->Create($orderData);
 ```
@@ -159,9 +159,9 @@ The 'order id' is available in the [create](#create-an-order) API response
 use object
 
 ```php
-use PassQa\Delivery\Orders;
+use PassQa\Delivery\PassOrder;
 
-$order = new Orders('Your token');
+$order = new PassOrder('Your token');
 
 $response = $order->Tracking('order id');
 ```
@@ -196,9 +196,9 @@ The 'order id' is available in the [create](#create-an-order) API response
 use object
 
 ```php
-use PassQa\Delivery\Orders;
+use PassQa\Delivery\PassOrder;
 
-$order = new Orders('Your token');
+$order = new PassOrder('Your token');
 
 $response = $order->Detail('order id');
 ```
@@ -220,9 +220,9 @@ The 'order id' is available in the [create](#create-an-order) API response
 use object
 
 ```php
-use PassQa\Delivery\Orders;
+use PassQa\Delivery\PassOrder;
 
-$order = new Orders('Your token');
+$order = new PassOrder('Your token');
 
 $response = $order->Cancel('order id');
 ```
@@ -242,9 +242,9 @@ List of all submitted orders by your tokens
 use object
 
 ```php
-use PassQa\Delivery\Orders;
+use PassQa\Delivery\PassOrder;
 
-$order = new Orders('Your token');
+$order = new PassOrder('Your token');
 
 $response = $order->List();
 ```
