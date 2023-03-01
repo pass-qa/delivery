@@ -16,7 +16,7 @@ class PassDeliveryApiServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(
             __DIR__ . '/../../config/passdelivery.php',
-            'pass-qa');
+            'passdelivery');
 
         $this->app->bind('pass-order', function () {
             return new PassOrder();
