@@ -6,7 +6,7 @@ return [
      * https://passdelivery.readme.io/reference/get-api-token
      */
 
-    'api_key' => 'Your Token',
+    'api_key' => env('PASS_DELIVERY_API_KEY'),
 
 
     /**
@@ -20,5 +20,5 @@ return [
      * Test Mode (boolean)
      * Accepted value: true for the test mode or false for the live mode
      */
-    'test_mode' => false,
+    'test_mode' => env('PASS_DELIVERY_TEST_MODE',false),
 ];
