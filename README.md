@@ -36,7 +36,7 @@ $order = new Orders('Your token')
 
 #### use facade
 
-you must create a key in .env file by name "PASS_DELIVERY_API" for pass delivery api token
+you must create a key in .env file by name "PASS_DELIVERY_API_KEY" for pass delivery api token
 
 ### calculate order price before create order
 
