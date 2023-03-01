@@ -9,6 +9,7 @@ class PassOrder
     public function __construct()
     {
         $token = (config('passdelivery.test_mode'))?config('passdelivery.test_api_key'):config('passdelivery.api_key');
+
         $this->options = [
             CURLOPT_URL            => "https://api.pass.qa/business/v1/orders",
             CURLOPT_RETURNTRANSFER => true,
@@ -18,7 +19,7 @@ class PassOrder
             CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST  => "GET",
             CURLOPT_HTTPHEADER     => [
-                "Authorization: Bearer ". $token,
+                "Authorization: Bearer {$token}",
                 'Content-Type: application/json; charset=utf-8',
                 'Accept: application/json'
             ],
