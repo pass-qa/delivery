@@ -48,7 +48,7 @@ class PassOrder
         }
     }
 
-    public function Price($points_info)
+    public function price($points_info)
     {
         $options = $this->options;
 
@@ -59,7 +59,7 @@ class PassOrder
         return $this->send($options);
     }
 
-    public function Create($order_info)
+    public function create($order_info)
     {
         $options = $this->options;
 
@@ -69,7 +69,7 @@ class PassOrder
         return $this->send($options);
     }
 
-    public function Detail($order_id)
+    public function detail($order_id)
     {
         $options = $this->options;
 
@@ -78,7 +78,7 @@ class PassOrder
         return $this->send($options);
     }
 
-    public function Tracking($order_id)
+    public function tracking($order_id)
     {
         $options = $this->options;
 
@@ -92,7 +92,7 @@ class PassOrder
         return $this->send($this->options);
     }
 
-    public function Cancel($order_id)
+    public function cancel($order_id)
     {
         $options = $this->options;
 
