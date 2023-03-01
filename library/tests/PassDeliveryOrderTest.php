@@ -1,9 +1,18 @@
 <?php
-namespace  PassQa\Delivery\Library\Tests;
-class PassDeliveryOrderTest extends \Orchestra\Testbench\TestCase
+
+namespace PassQa\Delivery\Library\Tests;
+
+use PassQa\Delivery\PassOrder;
+
+
+class PassDeliveryOrderTest extends PassTestCase
 {
-    public function testOk()
+
+    public function testList()
     {
-         $this->assertTrue(true);
+        $order = new PassOrder();
+        $orders = $order->List();
+        $this->assertTrue($orders['status'] === "success");
+
     }
 }
