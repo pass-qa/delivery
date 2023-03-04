@@ -18,25 +18,36 @@ See the <a href="https://passdelivery.readme.io/" target="_blank">documentation<
 ```console
 composer require pass-qa/delivery
 ```
+## Optional: 
+The service provider will automatically get registered. Or you may manually add the service provider in your config/app.php file:
 
+```console
+'providers' => [
+    // ...
+    pass-qa\delivery\src\providers\PassDeliveryApiServiceProvider::class,
+];
+```
+## Publish files
+You should publish the config/passdelivery.php config file with:
+
+```console
+php artisan vendor:publish --provider="pass-qa\delivery\src\providers\PassDeliveryApiServiceProvider"
+```
+After that, you should put your api_key in config file, also you can set test_mode to true for development or false for production.
 
 ## Usage Instructions
 
 ### First Step
 
-You must generate a token. See [this page](https://passdelivery.readme.io/reference/get-api-token-1) to learn how to create a token.
+You must generate a token. See [this page](https://passdelivery.readme.io/reference/get-api-token) to learn how to create a token.
 
 #### create new object
 
 ```php
 use PassQa\Delivery\PassOrder;
 
-$order = new PassOrder('Your token')
+$order = new PassOrder()
 ```
-
-#### use facade
-
-you must create a key in .env file by name "PASS_DELIVERY_API_KEY" for pass delivery api token
 
 ### calculate order price before create order
 
@@ -72,7 +83,7 @@ use object
 ```php
 use PassQa\Delivery\PassOrder;
 
-$order = new PassOrder('Your token');
+$order = new PassOrder();
 
 $response = $order->Price($priceData);
 ```
@@ -135,7 +146,7 @@ use object
 ```php
 use PassQa\Delivery\PassOrder;
 
-$order = new PassOrder('Your token');
+$order = new PassOrder();
 
 $response = $order->Create($orderData);
 ```
@@ -161,7 +172,7 @@ use object
 ```php
 use PassQa\Delivery\PassOrder;
 
-$order = new PassOrder('Your token');
+$order = new PassOrder();
 
 $response = $order->Tracking('order id');
 ```
@@ -198,7 +209,7 @@ use object
 ```php
 use PassQa\Delivery\PassOrder;
 
-$order = new PassOrder('Your token');
+$order = new PassOrder();
 
 $response = $order->Detail('order id');
 ```
@@ -222,7 +233,7 @@ use object
 ```php
 use PassQa\Delivery\PassOrder;
 
-$order = new PassOrder('Your token');
+$order = new PassOrder();
 
 $response = $order->Cancel('order id');
 ```
@@ -244,7 +255,7 @@ use object
 ```php
 use PassQa\Delivery\PassOrder;
 
-$order = new PassOrder('Your token');
+$order = new PassOrder();
 
 $response = $order->List();
 ```
