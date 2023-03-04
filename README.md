@@ -31,7 +31,7 @@ The service provider will automatically get registered. Or you may manually add 
 You should publish the config/passdelivery.php config file with:
 
 ```console
-php artisan vendor:publish --provider="pass-qa\delivery\src\providers\PassDeliveryApiServiceProvider"
+php artisan vendor:publish --provider="PassQa\Delivery\Providers\PassDeliveryApiServiceProvider"
 ```
 After that, you should put your api_key in config file, also you can set test_mode to true for development or false for production.
 
