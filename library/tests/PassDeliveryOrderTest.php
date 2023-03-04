@@ -31,6 +31,14 @@ class PassDeliveryOrderTest extends PassTestCase
         $this->assertTrue($order['status'] === "success");
     }
 
+    public function testDetail()
+    {
+        $order = new PassOrder();
+        $createdOrder = $order->create($this->prepareCreateOrderData());
+        $orderDetails = $order->detail($createdOrder['data']['order_id']);
+        $this->assertTrue($orderDetails['status'] === "success");
+    }
+
     private function prepareCreateOrderData(): array
     {
         return [
