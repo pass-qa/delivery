@@ -97,7 +97,7 @@ class PassDeliveryOrderTest extends PassTestCase
         ];
     }
 
-    private function preparePriceData()
+    private function preparePriceData(): array
     {
         return [
             "pickup"   => [
