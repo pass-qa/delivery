@@ -23,6 +23,14 @@ class PassDeliveryOrderTest extends PassTestCase
         $this->assertTrue($order['status'] === "success");
     }
 
+    public function testPrice()
+    {
+        $order = new PassOrder();
+        $priceData = $this->preparePriceData();
+        $order = $order->price($priceData);
+        $this->assertTrue($order['status'] === "success");
+    }
+
     private function prepareCreateOrderData(): array
     {
         return [
@@ -60,6 +68,30 @@ class PassDeliveryOrderTest extends PassTestCase
                         "address"=> "another street",
                         "description"=> "it is a sample description"
                     ]
+                ]
+            ]
+        ];
+    }
+
+    private function preparePriceData()
+    {
+        return [
+            "pickup" =>[
+                "lat" =>"25.275047",
+                "long" => "51.535141"
+            ],
+            "dropoffs" => [
+                [
+                    "lat" =>"25.277007",
+                    "long" => "51.530034"
+                ],
+                [
+                    "lat" =>"25.277005",
+                    "long" => "51.530039"
+                ],
+                [
+                    "lat" =>"25.277001",
+                    "long" => "51.530030"
                 ]
             ]
         ];
