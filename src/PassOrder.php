@@ -2,12 +2,14 @@
 
 namespace PassQa\Delivery;
 
-class Orders
+class PassOrder
 {
     private array $options;
 
-    public function __construct($token)
+    public function __construct()
     {
+        $token = (config('pass-delivery.test_mode'))?config('pass-delivery.test_api_key'):config('pass-delivery.api_key');
+
         $this->options = [
             CURLOPT_URL            => "https://api.pass.qa/business/v1/orders",
             CURLOPT_RETURNTRANSFER => true,
@@ -42,11 +44,11 @@ class Orders
                 "data"    => []
             ];
         } else {
-            return json_decode($response);
+            return json_decode($response,true);
         }
     }
 
-    public function Price($points_info)
+    public function price($points_info)
     {
         $options = $this->options;
 
@@ -57,7 +59,7 @@ class Orders
         return $this->send($options);
     }
 
-    public function Create($order_info)
+    public function create($order_info)
     {
         $options = $this->options;
 
@@ -67,7 +69,7 @@ class Orders
         return $this->send($options);
     }
 
-    public function Detail($order_id)
+    public function detail($order_id)
     {
         $options = $this->options;
 
@@ -76,7 +78,7 @@ class Orders
         return $this->send($options);
     }
 
-    public function Tracking($order_id)
+    public function tracking($order_id)
     {
         $options = $this->options;
 
@@ -90,7 +92,7 @@ class Orders
         return $this->send($this->options);
     }
 
-    public function Cancel($order_id)
+    public function cancel($order_id)
     {
         $options = $this->options;
 
