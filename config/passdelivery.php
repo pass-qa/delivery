@@ -20,5 +20,5 @@ return [
      * Test Mode (boolean)
      * Accepted value: true for the test mode or false for the live mode
      */
-    'test_mode' => env('PASS_DELIVERY_TEST_MODE',false),
+    'test_mode' => env('PASS_DELIVERY_TEST_MODE',true),
 ];
