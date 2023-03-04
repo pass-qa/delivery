@@ -8,7 +8,7 @@ class PassOrder
 
     public function __construct()
     {
-        $token = (config('passdelivery.test_mode'))?config('passdelivery.test_api_key'):config('passdelivery.api_key');
+        $token = (config('pass-delivery.test_mode'))?config('pass-delivery.test_api_key'):config('pass-delivery.api_key');
 
         $this->options = [
             CURLOPT_URL            => "https://api.pass.qa/business/v1/orders",

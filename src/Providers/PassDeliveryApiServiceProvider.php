@@ -10,15 +10,15 @@ class PassDeliveryApiServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../../config/passdelivery.php' => base_path('config/passdelivery.php'),
+            __DIR__ . '/../../config/pass-delivery.php' => base_path('config/pass-delivery.php'),
         ],'pass-delivery-config');
     }
 
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../../config/passdelivery.php',
-            'passdelivery');
+            __DIR__ . '/../../config/pass-delivery.php',
+            'pass-delivery');
 
         $this->app->bind('pass-order', function () {
             return new PassOrder();
