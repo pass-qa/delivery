@@ -9,7 +9,9 @@ class PassDeliveryApiServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__.'/../../config/passdelivery.php' => config_path('passdelivery.php'),
+        ]);
     }
 
     public function register()
